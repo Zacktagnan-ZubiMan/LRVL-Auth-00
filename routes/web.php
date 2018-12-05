@@ -15,6 +15,11 @@ Route::get('/welcome', function () {
     return view('welcome_basic');
 })->middleware('auth.basic');
 
+Route::get('/usuario/{id}', 'UserController@show')
+    //Acceso restringido pasa a nivel del controlador
+    ////->middleware('auth')
+    ->name('perfil');
+
 Route::get('/', ['as'=>'home','uses'=>'AppController@index']);
 
 Auth::routes();
