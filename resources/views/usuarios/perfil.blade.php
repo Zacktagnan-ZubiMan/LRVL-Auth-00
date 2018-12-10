@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Perfil') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('update') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -29,7 +29,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{-- old('name') --}}{{ $user->name }}" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{-- old('name') --}}{{ $user->name }}">
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Apellido(s)') }}</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{-- old('lastname') --}}{{ $user->lastname }}" required autofocus>
+                                <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{-- old('lastname') --}}{{ $user->lastname }}">
 
                                 @if ($errors->has('lastname'))
                                     <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
                             <label for="direction" class="col-md-4 col-form-label text-md-right">{{ __('Dirección') }}</label>
 
                             <div class="col-md-6">
-                                <input id="direction" type="text" class="form-control{{ $errors->has('direction') ? ' is-invalid' : '' }}" name="direction" value="{{-- old('direction') --}}{{ $user->direction }}" required autofocus>
+                                <input id="direction" type="text" class="form-control{{ $errors->has('direction') ? ' is-invalid' : '' }}" name="direction" value="{{-- old('direction') --}}{{ $user->direction }}">
 
                                 @if ($errors->has('direction'))
                                     <span class="invalid-feedback" role="alert">
@@ -85,7 +85,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Teléfono') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{-- old('phone') --}}{{ $user->phone }}" required autofocus>
+                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{-- old('phone') --}}{{ $user->phone }}">
 
                                 @if ($errors->has('phone'))
                                     <span class="invalid-feedback" role="alert">

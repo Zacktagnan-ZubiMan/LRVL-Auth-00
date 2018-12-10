@@ -19,9 +19,16 @@ Route::get('/usuario/{id}', 'UserController@show')
     //Acceso restringido pasa a nivel del controlador
     ////->middleware('auth')
     ->name('perfil');
+Route::post('/usuario/update', 'UserController@update')
+    //Acceso restringido pasa a nivel del controlador
+    ////->middleware('auth')
+    ->name('update');
 
 Route::get('/', ['as'=>'home','uses'=>'AppController@index']);
 
-Auth::routes();
+//Sin Verificación por EMAIL
+////Auth::routes();
+//Con Verificación por Email
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
