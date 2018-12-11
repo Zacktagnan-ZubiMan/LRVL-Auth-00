@@ -25,6 +25,20 @@
                         Inicio
                     </a>
                 </li>
+                {{-- SOLO si el usuario ha iniciado sesión --}}
+                @auth
+                <li class="nav-item dropdown active">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-envelope"></i>
+                    Mensajes
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('messages.index') }}" title="Ver listado">Listado</a>
+                    <a class="dropdown-item" href="{{ route('messages.create') }}" title="Nuevo mensaje">Nuevo</a>
+                  </div>
+                </li>
+                @endauth
             </ul>
 
             <ul class="navbar-nav navbar-right ">
@@ -32,7 +46,7 @@
                 @auth
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/home') }}" title="Ir a HOME">
-                            <i class="fa fa-sign-in"></i>
+                            <i class="fas fa-home"></i>
                             Home
                         </a>
                     </li>

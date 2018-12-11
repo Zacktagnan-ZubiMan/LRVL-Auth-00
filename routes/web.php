@@ -15,6 +15,18 @@ Route::get('/welcome', function () {
     return view('welcome_basic');
 })->middleware('auth.basic');
 
+Route::resource('messages', 'MessageController');
+//Lo siguiente NO FUNCIONA ¿¿por qué??
+//Route::resource('messages', 'MessageController')->names([
+//    'msg_index' => 'messages.index',
+//    'msg_create' => 'messages.create',
+//    'msg_store' => 'messages.store',
+//    'msg_show' => 'messages.show',
+//    'msg_edit' => 'messages.edit',
+//    'msg_update' => 'messages.update',
+//    'msg_destroy' => 'messages.destroy',
+//]);
+
 Route::get('/usuario/{id}', 'UserController@show')
     //Acceso restringido pasa a nivel del controlador
     ////->middleware('auth')
